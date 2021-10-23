@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login IoT Cloud</title>
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.login_box{
+    width: 320px;
+    height: 420px;
+    background-color: black;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.login_box .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(110px);
+}
+
+.login_box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login_box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.login_box input{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.login_box input[type="text"],
+.login_box input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.login_box input[type ="button"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #122a46;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="login_box">
+        
+        <h1>Login Here</h1>
+        <form>
+            <!--USERNAME-->
+            <label for="User Name">Username</label>
+            <input id="user" type="text" placeholder="Enter username">
+             <!--PASSWORD-->
+             <label for="Password">Password</label>
+             <input id="password" type="text" placeholder="Enter password">
+
+             <input type="button" value="Log in" id="log_in">
+
+             <p id="ERROR" style="display: none;">ERROR</p>
+
+        </form>
+    </div>
+</body> 
+<script>
+    document.getElementById("log_in").onclick = presionado;
+    function presionado(){
+        console.log(document.getElementById("user").value);
+        console.log(document.getElementById("password").value);
+        if(document.getElementById("user").value === "Diego" && 
+            document.getElementById("password").value === "1234"){
+                window.location.href = "index.html";
+        }
+        else{
+            document.getElementById("user").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("ERROR").style.display = "block";
+        }
+    }
+    
+</script>
+</html> 
